@@ -3,7 +3,7 @@ import React from 'react'
 import styles from "../../styles/riskyleads.module.css"
 import Sidebar from '../../components/Sidebar'
 
-function page() {
+function Page() {
   return (
     <div className={styles.container}>
   <Sidebar curentPage="riskyleads"/>
@@ -14,4 +14,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

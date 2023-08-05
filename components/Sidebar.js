@@ -20,7 +20,7 @@ function Sidebar({curentPage}) {
   return (
     <div  className={styles.containerNavbar}>
  <div className={styles.heading}>
-    <Image className={styles.logo} src={logo} />
+    <Image alt="logo"  className={styles.logo} src={logo} />
     <h1 className={styles.name}>Zoesquad</h1>
  </div>
 
@@ -28,27 +28,27 @@ function Sidebar({curentPage}) {
  <p className={styles.menu}>Main Menu</p>
 
  <div className={styles.item}>
-    <Image   src={cube} className={styles.logo_item} />
+    <Image alt="logo"    src={cube} className={styles.logo_item} />
     <Link href="/" style={{color: curentPage==="home" ? "#ED6214": "#757575"}} className={styles.item_name}>Search Leads</Link>
  </div>
  <div className={styles.item}>
-    <Image   src={profile} className={styles.logo_item} />
+    <Image alt="logo"     src={profile} className={styles.logo_item} />
     <Link  href="/verifiedleads"  style={{color: curentPage==="verifiedleads" ? "#ED6214": "#757575"}} className={styles.item_name}>Verified  Leads</Link>
  </div>
  <div className={styles.item}>
-    <Image   src={folder} className={styles.logo_item} />
+    <Image alt="logo"     src={folder} className={styles.logo_item} />
     <Link   href="/riskyleads"  style={{color: curentPage==="riskyleads" ? "#ED6214": "#757575"}} className={styles.item_name}>Risky Leads</Link>
  </div>
  <div className={styles.item}>
-    <Image   src={user} className={styles.logo_item} />
+    <Image  alt="logo"    src={user} className={styles.logo_item} />
     <Link  href="/foundleads"  style={{color: curentPage==="foundleads" ? "#ED6214": "#757575"}}  className={styles.item_name}>Found Leads</Link>
  </div>
  <div className={styles.item}>
-    <Image    src={user} className={styles.logo_item} />
+    <Image  alt="logo"     src={user} className={styles.logo_item} />
     <Link  href="/ticketrequest"   style={{color: curentPage==="ticketrequest" ? "#ED6214": "#757575"}} className={styles.item_name}>Ticket Request</Link>
  </div>
  <div className={styles.item}>
-    <Image   src={logout} className={styles.logo_item} />
+    <Image  alt="logo"    src={logout} className={styles.logo_item} />
     <h3 onClick={logouthandler} style={{color:  "#757575"}}  className={styles.item_name}>Logout</h3>
  </div>
 

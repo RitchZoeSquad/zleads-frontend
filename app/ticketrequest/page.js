@@ -3,7 +3,7 @@ import React from 'react'
 import styles from "../../styles/ticketrequest.module.css"
 import Sidebar from '../../components/Sidebar'
 
-function page() {
+function Page() {
   return (
     <div className={styles.container}>
   <Sidebar curentPage="ticketrequest"/>
@@ -14,4 +14,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

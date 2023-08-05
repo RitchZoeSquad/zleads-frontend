@@ -4,17 +4,17 @@ import styles from "../../styles/register.module.css"
 import logo from "../../public/images/logo.png"
 import Image from 'next/image'
 import Link from 'next/link'
-function page() {
+function Page() {
     const [isChecked,setisChecked]=useState(true)
   return (
     <div className={styles.container}>
       <div className={styles.loginForm}>
-        <Image src={logo} width={100} height={100} />
+        <Image  alt="logo"  src={logo} width={100} height={100} />
         <div className={styles.welc}>
         SignUp
         </div>
         <p className={styles.loginToyourAcc}>
-          Let's create your account 
+          Lets create your account 
         </p>
         <div className={styles.formItem}>
           <label htmlFor="Email">Email </label>
@@ -51,4 +51,4 @@ function page() {
   )
 }
 
-export default page
+export default Page

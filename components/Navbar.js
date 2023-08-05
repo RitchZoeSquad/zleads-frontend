@@ -6,7 +6,7 @@ import Image from 'next/image'
 function Navbar() {
   return (
     <nav className={styles.navbar}>
-     <Image className={styles.profile} src={profile}  />
+     <Image alt="profile_Picture"  className={styles.profile} src={profile}  />
     </nav>
   )
 }
