@@ -1,0 +1,12 @@
+.navbar{
+    width: 100%;
+    height: 100px;
+    padding: 20px 50px;
+    display: flex;
+   align-items: center;
+   justify-content: flex-end;
+}
+.profile{
+    width: 60px;
+    height: 60px;
+}

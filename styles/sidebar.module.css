@@ -1,0 +1,54 @@
+.containerNavbar{
+    display: flex;
+    width: 20vw;
+    height: 100vh;
+    padding: 20px 50px;
+    flex-direction: column;
+}
+.heading{
+    display: flex;
+    width: 100%;
+    height: 100px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+.logo{
+    width: 65px;
+height: 65px;
+}
+.name{
+    color: var(--primary-500, #ED6214);
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+line-height: 150%; /* 42px */
+letter-spacing: -0.84px;
+}
+.menu{
+    color: var(--secondary-400, #757575);
+font-size: 12px;
+font-style: normal;
+font-weight: 600;
+line-height: normal;
+letter-spacing: -0.24px;
+}
+.item{
+    width: 100%;
+    height: 70x;
+    display: flex;
+    margin: 15px 0px;
+}
+.logo_item{
+    width: 24px;
+height: 24px;
+}
+.item_name{
+font-size: 15px;
+cursor: pointer;
+font-style: normal;
+text-decoration: none;
+font-weight: 600;
+margin: 0px 10px;
+line-height: 150%; /* 24px */
+letter-spacing: -0.32px;
+}
