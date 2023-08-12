@@ -1,5 +1,9 @@
+
 import './globals.css'
 import { Kanit } from 'next/font/google'
+import Providers from '../redux/Providers'
+import axios from 'axios'
+axios.defaults.withCredentials = true;
 
 const kanit = Kanit(
   {
@@ -15,8 +19,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
+
     <html lang="en">
-      <body className={kanit.className}>{children}</body>
+
+      <body className={kanit.className}>
+        <Providers>
+        {children}
+        </Providers>
+        
+        </body>
     </html>
   )
 }

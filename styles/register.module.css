@@ -58,6 +58,7 @@ width: 100%;
 .RegisterBtn{
     display: flex;
 height: 60px;
+cursor: pointer;
 padding: 13px 24px;
 justify-content: center;
 font-size: 18px;
