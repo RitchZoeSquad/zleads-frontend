@@ -6,10 +6,7 @@ import Sidebar from '../components/Sidebar'
 import { useSelector } from 'react-redux'
 import { useRouter } from 'next/navigation'
 
-function page() {
-  const users=useSelector((state)=>{return state.users})
- const router=useRouter()
-
+function Page() {
   
   return (
     <div className={styles.container}>
@@ -21,4 +18,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
