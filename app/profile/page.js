@@ -43,7 +43,7 @@ if(users.isloggedin==false){
           <div >Profile Photo </div>
           <label htmlFor="photo">
   {/* <Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users.userdata.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/> */}
-  <Image src={"/images/user.png"}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>
+  <Image src={"/images/Profile.png"}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>
              </label>
         <input hidden value={profilePicture} onChange={(e)=>{setprofilePicture(e.target.value)}}   type="file" id="photo" name="photo" />
 
