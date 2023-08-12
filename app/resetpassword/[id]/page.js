@@ -7,11 +7,13 @@ import Link from 'next/link'
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios"
 import { redirect } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 
 function Page({ params}) {
   const [password,setpassword]=useState('')
   const [Cpassowrd,setCpassword]=useState('')
   const [error,seterror]=useState('')
+  const route=useRouter()
 
 
 
@@ -52,7 +54,7 @@ function Page({ params}) {
 
     if(res.data.success===true){
       toast.success(res.data.message)
-      redirect("/login")
+      route.push("/login")
     }else{
       toast.error(`Error : ${res.data.message}`)
     }
