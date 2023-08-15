@@ -4,23 +4,73 @@ import React, { useEffect, useState } from 'react'
 import styles from "../../styles/profile.module.css"
 import Sidebar from '../../components/Sidebar'
 import Image from 'next/image'
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { redirect, useRouter } from 'next/navigation'
+import toast, { Toaster } from 'react-hot-toast';
+import axios from 'axios'
+import { setdata } from  "../../redux/reducers/userSlice.js"
+axios.defaults.withCredentials = true;
 
 function Page() {
   const users=useSelector((state)=>{return state.users})
   const router=useRouter()
 const [name,setname]=useState(users?.userdata?.name)
 const [profilePicture,setprofilePicture]=useState('')
+const [file,setFile]=useState(null)
+const [country,setcountry]=useState(users?.userdata?.country)
+const [city,setcity]=useState(users?.userdata?.city)
+const [Province,setProvince]=useState(users?.userdata?.Province)
+const [bio,setbio]=useState(users?.userdata?.bio)
+const [twillioApi,settwillioApi]=useState(users?.userdata?.twilio_api)
+const [googleApi,setgooglegoogleApi]=useState(users?.userdata?.google_api)
 
-const [country,setcountry]=useState('')
-const [city,setcity]=useState('')
-const [Province,setProvince]=useState('')
-const [bio,setbio]=useState('')
-const [twillioApi,settwillioApi]=useState('')
-const [googleApi,setgooglegoogleApi]=useState('')
+const dispatch=useDispatch()
+const handleprofilepicturechange = (event) => {
+  if (event.target.files && event.target.files[0]) {
+
+    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif']; 
+    const fileType = event.target.files[0].type;
+
+    if (!allowedTypes.includes(fileType)) {
+      toast.error(`Error : You can only upload Images !`)
+    }else{
+      setFile(event.target.files[0])
+      setprofilePicture(URL.createObjectURL(event.target.files[0]));
+    }
+  }
+};
 
 
+
+
+const updateProfileHandler=async(e)=>{
+  e.preventDefault()
+
+
+
+  const formData = new FormData();
+  formData.append('name', name);
+  {file!==null?formData.append('photo', file):null}
+  formData.append('country', country);
+  formData.append('city', city);
+  formData.append('province', Province);
+  formData.append('bio', bio);
+  formData.append('twilio_api', twillioApi);
+  formData.append('google_api', googleApi);
+
+  const res= await axios.put(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/profile`,formData, {withCredentials: true,credentials: 'include'})
+  setFile(null)
+
+  if(res.data.success===true){
+    toast.success("Profile Updated Successfully 🎉")
+  dispatch(setdata(res.data.message))
+
+  }else{
+    toast.error(`Error :${res.data.message}`)
+
+}
+
+}
 if(users.isloggedin==false){
   redirect('/login')
 }else{
@@ -42,10 +92,9 @@ if(users.isloggedin==false){
     <div className={styles.formItem}>
           <div >Profile Photo </div>
           <label htmlFor="photo">
-  {/* <Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users.userdata.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/> */}
-  <Image src={"/images/Profile.png"}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>
+  {profilePicture==''?<Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users.userdata.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>:<img src={profilePicture}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>}
              </label>
-        <input hidden value={profilePicture} onChange={(e)=>{setprofilePicture(e.target.value)}}   type="file" id="photo" name="photo" />
+        <input hidden  onChange={handleprofilepicturechange}   type="file" id="photo" name="photo" />
 
         </div>
 
@@ -92,11 +141,13 @@ if(users.isloggedin==false){
 
         <div className={styles.sub}>
           <button onClick={(e)=>{e.preventDefault(); router.back();}} className={styles.backBtn}>Back</button>
-          <button  onClick={(e)=>{e.preventDefault();   }}  className={styles.subButton}>Update Profile</button>
+          <button  onClick={updateProfileHandler}  className={styles.subButton}>Update Profile</button>
         </div>
   </form>
     </div>
   </div>
+  <Toaster position="top-center"/>
+
     </div>
   )
 }

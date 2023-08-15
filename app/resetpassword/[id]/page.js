@@ -85,7 +85,8 @@ Change Password
 </button>
 
       </div>
-      <Toaster position="top-right"/>
+      <Toaster position="top-center"/>
+
 
     </div>
   )

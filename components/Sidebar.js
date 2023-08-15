@@ -6,9 +6,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { logout, setdata, setisLoggedin } from '@/redux/reducers/userSlice'
+import { setdata, setisLoggedin } from "../redux/reducers/userSlice.js"
 import { useRouter } from 'next/navigation'
+import toast, { Toaster } from 'react-hot-toast';
 
+axios.defaults.withCredentials = true;
+
+   
 function Sidebar({curentPage}) {
 const users=useSelector((state)=>{return state.users})
 const dispatch=useDispatch()
@@ -16,10 +20,13 @@ const dispatch=useDispatch()
 const router=useRouter()
    const logouthandler =async()=>{
       router.push("/")
-
+   
 dispatch(setisLoggedin(false))
 dispatch(setdata(null))
-await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null,{withCredentials:true});   
+toast.success("Logout Successfully")
+
+
+await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null, {withCredentials: true,credentials: 'include'});   
    }
 
 
@@ -58,6 +65,7 @@ await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null,{
     <h3 onClick={logouthandler} style={{color:  "#757575"}}  className={styles.item_name}>Logout</h3>
  </div>:null}
 
+ <Toaster position="top-center"/>
 
     </div>
   )

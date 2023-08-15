@@ -28,7 +28,6 @@ function Page() {
 }
   const submithandler=async()=>{
   
-    console.log("url",`${process.env.NEXT_PUBLIC_SERVER_URL}`)
     let isValidated=validate();
 
     if(isValidated){
@@ -38,8 +37,9 @@ function Page() {
     })
 
     if(res.data.success===true){
-      toast.success("Login Successfull")
 
+      toast.success("Login Successfull")
+      
       dispatch(setisLoggedin(true))
       dispatch(setdata(res.data.message))
 
@@ -87,7 +87,8 @@ toast.error(error)
 
 <div >Dont have an account ? <Link href="/register" style={{"textDecoration":"none",color:"#ED6214"}} >Signup</Link></div>
       </div>
-      <Toaster position="top-right"/>
+      <Toaster position="top-center"/>
+
 
     </div>
   )
