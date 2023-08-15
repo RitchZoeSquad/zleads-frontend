@@ -4,8 +4,8 @@ const nextConfig = {
     images:{
         domains:
         [
-            // "zleads-backend.vercel.app"
-            "localhost"
+            "zleadsbackend.onrender.com"
+            // "localhost"
 
         ]
     },
