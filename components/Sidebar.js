@@ -6,9 +6,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
-import { setdata, setisLoggedin } from "../redux/reducers/userSlice.js"
+import { setdata, setfoundLeads, setisLoggedin, setriskyLeads } from "../redux/reducers/userSlice.js"
 import { useRouter } from 'next/navigation'
 import toast, { Toaster } from 'react-hot-toast';
+import { setsearched , setfoundResult} from '@/redux/reducers/leadsSlice'
+import { setData } from '@/redux/reducers/EmailVerifierSlice'
 
 axios.defaults.withCredentials = true;
 
@@ -23,10 +25,18 @@ const router=useRouter()
    
 dispatch(setisLoggedin(false))
 dispatch(setdata(null))
+
+dispatch(setsearched(''))
+dispatch(setfoundResult(null))
+dispatch(setriskyLeads(null))
+dispatch(setfoundLeads(null))
+dispatch(setData(null))
+
 toast.success("Logout Successfully")
 
 
 await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null, {withCredentials: true,credentials: 'include'});   
+router.push("/login")
    }
 
 
@@ -44,17 +54,20 @@ await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null, 
     <Image alt="logo"    width={24} height={24}       src="/icons/cube.png" className={styles.logo_item} />
     <Link href="/" style={{color: curentPage==="home" ? "#ED6214": "#757575"}} className={styles.item_name}>Search Leads</Link>
  </div>
+
  <div className={styles.item}>
-    <Image alt="logo"    width={24} height={24}      src="/icons/profile.png" className={styles.logo_item} />
-    <Link  href="/verifiedleads"  style={{color: curentPage==="verifiedleads" ? "#ED6214": "#757575"}} className={styles.item_name}>Verified  Leads</Link>
+    <Image  alt="logo"    width={24} height={24}     src="/icons/user.png" className={styles.logo_item} />
+    <Link  href="/foundleads"  style={{color: curentPage==="foundleads" ? "#ED6214": "#757575"}}  className={styles.item_name}>Found Leads</Link>
  </div>
+
+
  <div className={styles.item}>
     <Image alt="logo"     width={24} height={24}     src="/icons/folder.png" className={styles.logo_item} />
     <Link   href="/riskyleads"  style={{color: curentPage==="riskyleads" ? "#ED6214": "#757575"}} className={styles.item_name}>Risky Leads</Link>
  </div>
  <div className={styles.item}>
-    <Image  alt="logo"    width={24} height={24}     src="/icons/user.png" className={styles.logo_item} />
-    <Link  href="/foundleads"  style={{color: curentPage==="foundleads" ? "#ED6214": "#757575"}}  className={styles.item_name}>Found Leads</Link>
+    <Image alt="logo"    width={24} height={24}      src="/icons/profile.png" className={styles.logo_item} />
+    <Link  href="/verifiedleads"   style={{color: curentPage==="verifiedleads" ? "#ED6214": "#757575"}} className={styles.item_name}>Verified Leads</Link>
  </div>
  <div className={styles.item}>
     <Image  alt="logo"     width={24} height={24}    src="/icons/user.png" className={styles.logo_item} />
@@ -65,7 +78,8 @@ await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/logout`,null, 
     <h3 onClick={logouthandler} style={{color:  "#757575"}}  className={styles.item_name}>Logout</h3>
  </div>:null}
 
- <Toaster position="top-center"/>
+ <Toaster position="bottom-center"/>
+
 
     </div>
   )

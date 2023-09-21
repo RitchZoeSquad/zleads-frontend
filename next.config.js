@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    reactStrictMode: true,
+    reactStrictMode: false,
+    output: 'export',
     images:{
         domains:
         [
-            "zleadsbackend.onrender.com"
-            // "localhost"
+            "zleadsbackend.onrender.com",
+            "localhost"
 
         ]
     },

@@ -105,7 +105,8 @@ else{
 
 <div >Already have an account ? <Link href="/login" style={{"textDecoration":"none",color:"#ED6214"}} >Login</Link></div>
       </div>
-      <Toaster position="top-center"/>
+      <Toaster position="bottom-center"/>
+
 
     </div>
     

@@ -87,7 +87,8 @@ toast.error(error)
 
 <div >Dont have an account ? <Link href="/register" style={{"textDecoration":"none",color:"#ED6214"}} >Signup</Link></div>
       </div>
-      <Toaster position="top-center"/>
+      <Toaster position="bottom-center"/>
+
 
 
     </div>

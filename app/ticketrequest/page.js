@@ -9,6 +9,10 @@ function Page() {
   <Sidebar curentPage="ticketrequest"/>
   <div className={styles.home}>
     <Navbar />
+<div>
+Ticket Page
+
+</div>
   </div>
     </div>
   )

@@ -57,7 +57,8 @@ function Page() {
 </button>
 
       </div>
-      <Toaster position="top-center"/>
+      <Toaster position="bottom-center"/>
+
 
 
     </div>

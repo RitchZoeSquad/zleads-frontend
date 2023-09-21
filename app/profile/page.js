@@ -9,6 +9,7 @@ import { redirect, useRouter } from 'next/navigation'
 import toast, { Toaster } from 'react-hot-toast';
 import axios from 'axios'
 import { setdata } from  "../../redux/reducers/userSlice.js"
+import ProtectedRoute from '@/components/PrivateRoute'
 axios.defaults.withCredentials = true;
 
 function Page() {
@@ -28,7 +29,7 @@ const dispatch=useDispatch()
 const handleprofilepicturechange = (event) => {
   if (event.target.files && event.target.files[0]) {
 
-    const allowedTypes = ['image/jpeg', 'image/png', 'image/gif']; 
+    const allowedTypes = ['image/jpeg', 'image/png']; 
     const fileType = event.target.files[0].type;
 
     if (!allowedTypes.includes(fileType)) {
@@ -71,11 +72,10 @@ const updateProfileHandler=async(e)=>{
 }
 
 }
-if(users.isloggedin==false){
-  redirect('/login')
-}else{
 
   return (
+    <ProtectedRoute>
+
     <div className={styles.container}>
   <Sidebar />
   <div className={styles.home}>
@@ -92,7 +92,7 @@ if(users.isloggedin==false){
     <div className={styles.formItem}>
           <div >Profile Photo </div>
           <label htmlFor="photo">
-  {profilePicture==''?<Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users.userdata.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>:<img src={profilePicture}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>}
+  {profilePicture==''?<Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users?.userdata?.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>:<Image src={profilePicture}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>}
              </label>
         <input hidden  onChange={handleprofilepicturechange}   type="file" id="photo" name="photo" />
 
@@ -105,7 +105,7 @@ if(users.isloggedin==false){
   
     <div className={styles.formItem}>
           <label htmlFor="Email">Email </label>
-          <input readOnly value={users.userdata.email} className={styles.inp} placeholder='JohnDoe@gmail.com' type="text" id="Email" name="Email" />
+          <input readOnly value={users?.userdata?.email} className={styles.inp} placeholder='JohnDoe@gmail.com' type="text" id="Email" name="Email" />
         </div>
 
             <div className={styles.additionalInfo}>
@@ -146,11 +146,12 @@ if(users.isloggedin==false){
   </form>
     </div>
   </div>
-  <Toaster position="top-center"/>
+  <Toaster position="bottom-center"/>
+
 
     </div>
+    </ProtectedRoute>
   )
-}
 }
 
 export default Page

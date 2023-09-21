@@ -1,4 +1,3 @@
-
 import './globals.css'
 import { Kanit } from 'next/font/google'
 import Providers from '../redux/Providers'

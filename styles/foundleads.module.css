@@ -1,9 +1,250 @@
 .container{
     width: 100vw;
-    height: 100vh;
     display: flex;
 }
 .home{
     width: 80vw;
-    height: 100vh;
+}
+
+.showMsg{
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    font-size: 17px;
+    color:#ED6214;
+    align-items: center;
+    justify-content: center;
+}
+.containers{
+    width: 80vw;
+}
+.headingP{
+    display: flex;
+    width: 95%;
+    justify-content: space-between;
+    margin: 10px 0px;
+    align-items: center;
+}
+.heading{
+    color: #191919;
+font-size: 25px;
+font-style: normal;
+font-weight: 700;
+}
+.containers table {
+    width: 95%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+.frame{
+    width: 65px;
+height: 60px;
+background: #ED6214;
+border: none;
+user-select: none;
+
+display: flex;
+justify-content: center;
+cursor: pointer;
+
+align-items: center;
+}
+.filterIcon{
+    width: 65px;
+height: 60px;
+background: #7e7575;
+border: none;
+user-select: none;
+display: flex;
+justify-content: center;
+cursor: pointer;
+align-items: center;
+}
+.containers table th,
+.containers table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.containers table th {
+    background-color: #f2f2f2;
+    color: #757575;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.containers table td {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+   
+
+}
+
+.name div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px; /* Adjust the margin as needed */
+}
+
+.name h4 {
+    color: #191919;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.name h6 {
+    color: #757575;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.userImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.pagination{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0px;
+}
+.pagination_control{
+    margin: 0px 15px;
+background-color: transparent;
+color: #191919;
+border: none;
+cursor: pointer;
+user-select: none;
+
+font-size: 15px;
+
+}
+.pagination_control:disabled{
+  cursor: not-allowed;
+}
+.btn{
+    margin: 0px 20px;
+    border-radius: 2px;
+width: 65px;
+user-select: none;
+
+    height: 30px;
+background: #ED6214;
+display: flex;
+color: white;
+border: none;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.loading{
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.model{
+    width: 95%;
+    animation: 1s ease-in-out move;
+    position: -webkit-sticky;
+    position: sticky;
+    display: flex;
+    border: 1px solid #7e7575;
+    margin: 10px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 10px;
+    /* background-color: #7e75751c; */
+    }
+@keyframes move{
+    0%{
+        height: 0vh;
+        opacity: 0;
+    }
+    100%{
+        height: 20vh;
+        opacity: 1;
+    }
+}
+.filt{
+    color: black;
+    margin: 10px 0px;
+    font-size: 20px;
+    align-self: flex-start;
+
+}
+.checkbox_btn{
+    display: flex;
+    align-self: flex-end;
+    font-size: 15px;
+    width: 20%;
+    margin: 5px 0px;
+    justify-content: space-around;
+}
+.checkbox {
+    display: none;
+  }
+  
+  .switch_label {
+    display: flex;
+    align-items: center;
+    width: 50px; /* Adjust width as needed */
+    height: 20px; /* Adjust height as needed */
+    background: #757575;
+    cursor: pointer;
+    border-radius: 30px; /* Half of the height to make it round */
+    position: relative;
+    transition: background-color 0.2s;
+  }
+  
+  .switch_label .switch_button {
+    content: '';
+    width: 18px; /* Adjust width as needed */
+    height: 18px; /* Adjust height as needed */
+    border-radius: 50%; /* To make it a circle */
+    transition: 0.2s;
+    background: #fff;
+    box-shadow: 0 0 2px 0 rgba(10, 10, 10, 0.29);
+  }
+  
+  .checkbox:checked + .switch_label {
+    background: #ED6214; /* Change the background color when checked */
+  }
+  
+  .checkbox:checked + .switch_label .switch_button {
+    transform: translateX(30px); /* Adjust the translation distance */
+    background: #ffffff; /* Change the background color when checked */
+  }
+  
+  .switch_label:active .switch_button {
+    width: 36px; /* Increase the width when active */
+  }
+  
+.apply_filters{
+    width: 120px;
+    height: 30px;
+    color: white;
+    background-color:#ED6214 ;
+    border: none;
+    outline: none;
+    border-radius: 3px;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px;
+
 }

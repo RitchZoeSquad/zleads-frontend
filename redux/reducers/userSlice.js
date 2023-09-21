@@ -5,6 +5,8 @@ const UserSlice = createSlice({
     initialState: {
         isloggedin:false,
         userdata:null,
+        foundLeads:null,
+        riskyLeads:null
     },
     reducers: {
      
@@ -15,11 +17,17 @@ const UserSlice = createSlice({
       setisLoggedin(state,action){
         state.isloggedin=action.payload
       },
+      setfoundLeads(state,action){
+        state.foundLeads=action.payload
+      },
+      setriskyLeads(state,action){
+        state.riskyLeads=action.payload
+      },
  
     },
   })
 
 
   export default UserSlice.reducer
-  export const {setdata,setuserorders,setisLoggedin}=UserSlice.actions
+  export const {setdata,setfoundLeads,setriskyLeads,setuserorders,setisLoggedin}=UserSlice.actions
   

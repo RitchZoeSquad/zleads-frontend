@@ -6,16 +6,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import toast, { Toaster } from 'react-hot-toast';
 import axios from "axios"
-import { redirect } from 'next/navigation'
+import { redirect, useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/navigation'
 
 function Page({ params}) {
   const [password,setpassword]=useState('')
   const [Cpassowrd,setCpassword]=useState('')
   const [error,seterror]=useState('')
-  const route=useRouter()
+  const router=useRouter()
+  const searchParam=useSearchParams()
 
-
+  const email  = searchParam.get("email");
+  
 
   const validate = () => {
     if (!Cpassowrd || !password) {
@@ -49,12 +51,13 @@ function Page({ params}) {
 
     const res=await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/resetpassword`,{
       Newpassword:password,
-      code:params.id
+      code:params.id,
+      email:email
     })
 
     if(res.data.success===true){
       toast.success(res.data.message)
-      route.push("/login")
+      router.push("/login")
     }else{
       toast.error(`Error : ${res.data.message}`)
     }
@@ -85,7 +88,8 @@ Change Password
 </button>
 
       </div>
-      <Toaster position="top-center"/>
+      <Toaster position="bottom-center"/>
+
 
 
     </div>

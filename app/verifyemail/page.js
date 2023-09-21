@@ -5,14 +5,16 @@ import toast, { Toaster } from 'react-hot-toast';
 
 import Image from 'next/image'
 import Link from 'next/link'
-import {  useRouter,notFound} from 'next/navigation'
+import { useSearchParams, useRouter,notFound} from 'next/navigation'
 import axios from "axios"
 
-function Page() {
+function Page({params}) {
   const router=useRouter()
+  const searchParam=useSearchParams()
  const [otp,setotp]=useState('')
  const [error,seterror]=useState('')
 
+ const email  = searchParam.get("email");
 
 
  const validate = () => {
@@ -28,7 +30,7 @@ function Page() {
     let isValidated=validate();
 if(isValidated){
 
-    const res=await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/verifyemail`,{code:otp})
+    const res=await axios.post(`${process.env.NEXT_PUBLIC_SERVER_URL}/api/users/verifyemail`,{code:otp,email:email})
      if(res.data.success===true){
       toast.success("Email Verified Successfully")
       router.push("/login")
@@ -67,7 +69,8 @@ Verify
 </button>
 
       </div>
-      <Toaster position="top-center"/>
+      <Toaster position="bottom-center"/>
+
 
 
     </div>

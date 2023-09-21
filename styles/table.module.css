@@ -1,0 +1,133 @@
+.containers {
+    width: 95%;
+}
+
+.containers table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+}
+
+.containers table th,
+.containers table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+.containers table th {
+    background-color: #f2f2f2;
+    color: #757575;
+    font-size: 12px;
+    font-weight: 500;
+    text-align: left;
+}
+
+.containers table td {
+    color: #757575;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.name {
+    display: flex;
+    align-items: center;
+}
+
+.name div {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px;
+    /* Adjust the margin as needed */
+}
+
+.name h4 {
+    color: #191919;
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0;
+}
+
+.name h6 {
+    color: #757575;
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0;
+}
+
+.userImage {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+.exportButton {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.export {
+    width: 65px;
+    padding: 5px;
+    color: white;
+    background-color: #757575;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.exportExcel {
+    width: 120px;
+    padding: 5px;
+    margin: 0px 5px;
+    color: white;
+    background-color: #757575;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.Risky {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #F6ED00;
+}
+.userName{
+    cursor: pointer;
+}
+.modelHeading{
+    color: #ed6214;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+    margin: 10px 0px;
+}
+.modalVal{
+    color: black;
+    font-size: 15px;
+    margin: 0px 15px;
+}
+.ModalKey{
+    color: #757575;
+    margin: 10px 0px;
+}
+.closeModel{
+    width: 80px;
+    height: 30px;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    color: white;
+    background-color: #ed6214;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0px;
+    
+}
