@@ -5,7 +5,7 @@ phases:
  install:
     runtime-versions:
       nodejs:16
-  build:
+ build:
     commands:
       - npm install
       - ls
