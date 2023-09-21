@@ -91,7 +91,7 @@ function Page() {
           <div className={styles.headingP}>
                   <div className={styles.heading}>Risky Leads  </div>
                   <button onClick={() => { model === true ? setShowModel(false) : setShowModel(true) }} className={styles.filterIcon}>
-                    <Image  alt="icon" src="https://d3k81nzjgcglm8.cloudfront.net/icons/Frame.png" width={24} height={24} />
+                    <img  alt="icon" src="https://d3k81nzjgcglm8.cloudfront.net/icons/Frame.png" width={24} height={24} />
                   </button>
                 </div>
                 {model === true ? <div className={styles.model}>
@@ -135,7 +135,7 @@ function Page() {
                   : null}
           {loading === true ?
             <div className={styles.loading}>
-              <Image  alt="loader" src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={100} height={100} />
+              <img  alt="loader" src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={100} height={100} />
             </div>
             :
             riskyLeads?.length === 0 ?

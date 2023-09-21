@@ -92,7 +92,7 @@ const updateProfileHandler=async(e)=>{
     <div className={styles.formItem}>
           <div >Profile Photo </div>
           <label htmlFor="photo">
-  {profilePicture==''?<Image src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users?.userdata?.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>:<Image src={profilePicture}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>}
+  {profilePicture==''?<img src={`${process.env.NEXT_PUBLIC_SERVER_URL}/${users?.userdata?.profilePhoto}`}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>:<img src={profilePicture}  alt="profile_Picture" width={100} height={100}  className={styles.profilePicture}/>}
              </label>
         <input hidden  onChange={handleprofilepicturechange}   type="file" id="photo" name="photo" />
 

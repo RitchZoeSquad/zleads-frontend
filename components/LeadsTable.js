@@ -13,7 +13,7 @@ console.log(data)
     const renderCallLink = (phoneNumber) => {
         return (
             <a href={`tel:${phoneNumber}`}>
-                <Image alt="call_icon" src="/icons/call.png" width={40} height={40} />
+                <img alt="call_icon" src="https://d3k81nzjgcglm8.cloudfront.net/icons/call.png" width={40} height={40} />
             </a>
         );
     };
@@ -182,12 +182,12 @@ console.log(data)
                             {risky === true ? <td><div className={styles.Risky}>.</div></td> : null}
                             <td>
                                 <div className={styles.name}>
-                                    <Image
+                                    <img
                                     alt="user_icon"
                                         className={styles.userImage}
                                         width={40}
                                         height={40}
-                                        src="/images/user.png"
+                                        src="https://d3k81nzjgcglm8.cloudfront.net/images/user.png"
                                     />
                                     <div>
                                         <h4 className={styles.userName} onClick={()=>{setshowUserModel(true);setClikeduserInfo(val.lead)}}>{type === "withWebsite" ? val.lead.full_name || "Not Found" : val.lead.name || "Not Found"}</h4>

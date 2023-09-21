@@ -121,7 +121,7 @@ function Page() {
             onChange={(e) => { setemail([e.target.value]) }}
             />
           {status === STATUS.LOADING ?
-            <Image src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={40} height={40} /> :
+            <img src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={40} height={40} /> :
             <>
               <button onClick={submithandler} className={styles.frame}>Verify Email</button>
                 
@@ -158,7 +158,7 @@ function Page() {
                 <tr key={index}>
               <td>
                           <div className={styles.name}>
-                            <Image
+                            <img
                              alt="userImg"
                               className={styles.userImage}
                               width={40}
