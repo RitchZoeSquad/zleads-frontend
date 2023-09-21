@@ -92,7 +92,7 @@ function Page() {
           <div className={styles.headingP}>
                   <div className={styles.heading}>Found Leads  </div>
                   <button onClick={() => { model === true ? setShowModel(false) : setShowModel(true) }} className={styles.filterIcon}>
-                    <Image alt="logo" src="/icons/Frame.png" width={24} height={24} />
+                    <Image alt="logo" src="https://d3k81nzjgcglm8.cloudfront.net/icons/Frame.png" width={24} height={24} />
                   </button>
                 </div>
                 {model === true ? <div className={styles.model}>
@@ -136,7 +136,7 @@ function Page() {
                   : null}
           {loading === true ?
             <div className={styles.loading}>
-              <Image alt="loader" src="/images/loader.gif" width={100} height={100} />
+              <Image alt="loader" src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={100} height={100} />
             </div>
             :
             foundLeads?.length === 0 ?

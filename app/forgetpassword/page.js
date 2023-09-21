@@ -38,7 +38,7 @@ function Page() {
   return (
     <div className={styles.container}>
       <div className={styles.loginForm}>
-        <Image alt="logo" src="/images/logo.png" width={100} height={100} />
+        <Image alt="logo" src="https://d3k81nzjgcglm8.cloudfront.net/images/logo.png" width={100} height={100} />
         <div className={styles.welc}>
          Forget Password
         </div>

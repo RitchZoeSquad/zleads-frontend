@@ -84,7 +84,7 @@ const updateProfileHandler=async(e)=>{
     <div className={styles.details}>
     <div className={styles.hed}>
         <p>User Details</p>
-     <Image src="/icons/info.png"  alt="profile_Picture" width={20} height={20}  className={styles.logo}   />
+     <Image src="https://d3k81nzjgcglm8.cloudfront.net/icons/info.png"  alt="profile_Picture" width={20} height={20}  className={styles.logo}   />
     </div>
 
   <form className={styles.form}>

@@ -121,7 +121,7 @@ function Page() {
             onChange={(e) => { setemail([e.target.value]) }}
             />
           {status === STATUS.LOADING ?
-            <Image src="/images/loader.gif" width={40} height={40} /> :
+            <Image src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={40} height={40} /> :
             <>
               <button onClick={submithandler} className={styles.frame}>Verify Email</button>
                 
@@ -163,7 +163,7 @@ function Page() {
                               className={styles.userImage}
                               width={40}
                               height={40}
-                              src="/images/user.png"
+                              src="https://d3k81nzjgcglm8.cloudfront.net/images/user.png"
                               />
                             <div>
                               <h4>{item.full_name ? `${val.full_name}` : 'Not Found'}</h4>

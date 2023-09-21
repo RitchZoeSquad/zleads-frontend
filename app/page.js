@@ -104,7 +104,7 @@ function Page() {
               <input type="text" className={styles.inp} value={search} placeholder='Search Anything Here...' onChange={(e) => { setsearch(e.target.value) }} />
 
               <button disabled={status === STATUS.LOADING ? true : false} onClick={submithandler} className={styles.frame}>
-                <Image  alt="logo" src="/icons/search.png" width={24} height={24} />
+                <Image  alt="logo" src="https://d3k81nzjgcglm8.cloudfront.net/icons/search.png" width={24} height={24} />
               </button>
               <button onClick={() => {
                 if (showFilter) {
@@ -116,7 +116,7 @@ function Page() {
                   setshowFilter(true)
                 }
               }} className={styles.filterIcon}>
-                <Image  alt="logo" src="/icons/Frame.png" width={24} height={24} />
+                <Image  alt="logo" src="https://d3k81nzjgcglm8.cloudfront.net/icons/Frame.png" width={24} height={24} />
               </button>
             </div>
 
@@ -159,7 +159,7 @@ function Page() {
               </div>
 
               <button disabled={status === STATUS.LOADING ? true : false} onClick={submithandler} className={styles.frame}>
-                <Image alt="logo"  src="/icons/search.png" width={24} height={24} />
+                <Image alt="logo"  src="https://d3k81nzjgcglm8.cloudfront.net/icons/search.png" width={24} height={24} />
               </button>
               <button onClick={() => {
                 if (showFilter) {
@@ -171,7 +171,7 @@ function Page() {
                   setshowFilter(true)
                 }
               }} className={styles.filterIcon}>
-                <Image alt="logo"  src="/icons/Frame.png" width={24} height={24} />
+                <Image alt="logo"  src="https://d3k81nzjgcglm8.cloudfront.net/icons/Frame.png" width={24} height={24} />
               </button>
             </div>
 
@@ -204,7 +204,7 @@ function Page() {
         </div>
         {status === STATUS.LOADING ?
           <div className={styles.loading}>
-            <Image alt="loader"  src="/images/loader.gif" width={100} height={100} />
+            <Image alt="loader"  src="https://d3k81nzjgcglm8.cloudfront.net/images/loader.gif" width={100} height={100} />
 
           </div> : null
         }
