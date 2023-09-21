@@ -12,3 +12,5 @@ phases:
       - ls
       - cd out
       - ls
+      - aws s3 rm s3://bucket-f03bf761-master --recursive
+      - aws s3 sync . s3://bucket-f03bf761-master
